@@ -1,0 +1,180 @@
+
+/* Estilo base de la navbar */
+/* ===== NAVBAR ===== */
+#Enlaces {
+  position:  sticky;         /* se queda fija al hacer scroll */
+  top: 0;
+  z-index: 1000;
+  background: #0b0f14;      /* color de fondo */
+  border-bottom: 1px solid #1f2937;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* Contenedor del nav */
+#Enlaces nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 24px;
+}
+
+/* Lista horizontal */
+#Enlaces ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  justify-content: center;  /* links al medio */
+  align-items: center;
+}
+
+/* Links */
+#Enlaces a {
+  text-decoration: none;
+  color: #e6edf3;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+/* Hover */
+#Enlaces a:hover {
+  background: rgba(79, 140, 255, 0.15);
+  color: #4f8cff;
+}
+
+/* Responsive: en pantallas chicas se apila */
+@media (max-width: 768px) {
+  #Enlaces ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* ===== Variables de tema ===== */
+:root{
+  --bg: #0b0f14;
+  --bg-elev: #121821;
+  --text: #e6edf3;
+  --muted: #94a3b8;
+  --accent: #4f8cff;        /* azul */
+  --accent-2: #22d3ee;      /* cian */
+  --card: #0f1520;
+  --border: #1f2937;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f7fbff;
+    --bg-elev:#ffffff;
+    --text:#0b1220;
+    --muted:#475569;
+    --accent:#2563eb;
+    --accent-2:#0891b2;
+    --card:#ffffff;
+    --border:#e5e7eb;
+    --shadow: 0 10px 24px rgba(0,0,0,.08);
+  }
+}
+
+/* ===== Reset básico + tipografía ===== */
+*{ box-sizing:border-box; }
+html{
+  scroll-behavior: smooth;
+  hanging-punctuation: first last;
+}
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;   /* Tipografia de Google Fonts*/
+  color:var(--text);
+  background: var(--bg-elev);
+}
+
+/* Mejoras de enlaces por accesibilidad */
+a{
+  color:var(--accent);
+  text-decoration: none;
+}
+a:hover, a:focus-visible{
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ===== Layout base ==*
+/* ===== Redes sociales centradas y grandes ===== */
+.social-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* 🔹 Centra en el medio */
+  gap: 24px;                 /* espacio entre botones */
+  padding: 0;
+  margin: 30px 0 0 0;
+}
+
+.social-links li {
+  margin: 0;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 32px;        /* 🔹 Botones más grandes */
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;           /* 🔹 Texto más grande */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Íconos un poco más grandes */
+.social-links a i {
+  font-size: 30px;
+}
+
+/* Colores personalizados de íconos */
+.social-links a .fa-linkedin { color: #0A66C2; }
+.social-links a .fa-github { color: #181717; }
+.social-links a .fa-envelope { color: #EA4335; }
+.social-links a .fa-whatsapp { color: #25D366; }
+
+/* Fondo del botón */
+.social-links a {
+  background: #1f2937;
+  box-shadow: 0 6px 14px rgba(0,0,0,2);
+}
+
+/* Hover */
+.social-links a:hover {
+  transform: translateY(-3px) scale(1.05);  /* 🔹 efecto más notorio */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+#Sobre-mi img {
+  width: 550px;     /* ancho fijo */
+  height: auto;     /* ajusta altura automáticamente */
+  display: block;
+  margin: 1rem auto; /* centrada con margen */
+}
+
+p{
+  
+  text-align : center;
+}
+h1  {
+  
+  text-align : center;
+}
+
+#Proyecto1 video{
+
+  display: block;
+  margin: 1rem auto; /* centrada con margen */
+}
+* {
+  text-align : center;
+}
