@@ -2,13 +2,21 @@
 /* Estilo base de la navbar */
 /* ===== NAVBAR ===== */
 #Enlaces {
-  position:  sticky;         /* se queda fija al hacer scroll */
+  position: fixed;          /* Siempre arriba */
   top: 0;
+  left: 0;
+  width: 100%;              /* ocupa todo el ancho */
   z-index: 1000;
-  background: #0b0f14;      /* color de fondo */
-  border-bottom: 1px solid #1f2937;
+
+  /* 🎨 Efecto glass */
+  background: rgba(15, 23, 42, 0.6); /* color con transparencia */
+  backdrop-filter: blur(10px);       /* difumina lo de atrás */
+  -webkit-backdrop-filter: blur(10px); /* soporte Safari */
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
+
 
 /* Contenedor del nav */
 #Enlaces nav {
@@ -91,6 +99,7 @@ body{
   font-family: 'Poppins', sans-serif;   /* Tipografia de Google Fonts*/
   color:var(--text);
   background: var(--bg-elev);
+  padding-top: 70px;  /* ajustá según la altura real del nav */
 }
 
 /* Mejoras de enlaces por accesibilidad */
@@ -161,20 +170,63 @@ a:hover, a:focus-visible{
   margin: 1rem auto; /* centrada con margen */
 }
 
-p{
-  
-  text-align : center;
-}
-h1  {
-  
-  text-align : center;
-}
-
 #Proyecto1 video{
 
   display: block;
   margin: 1rem auto; /* centrada con margen */
 }
-* {
-  text-align : center;
+/* ===== Modelo de caja para secciones ===== */
+section:not(#Enlaces){
+  max-width: 1000px;          /* ancho máximo */
+  margin: 40px auto;          /* margen arriba/abajo y centrado */
+  padding: 30px;              /* espacio interno */
+  border: 1px solid var(--border); /* borde visible */
+  border-radius: 12px;        /* bordes redondeados */
+  background: var(--card);    /* fondo diferenciado */
+  box-shadow: var(--shadow);  /* sombra */
+}
+
+/* Ajuste específico para títulos */
+section h1 {
+  margin-top: 0;              /* quita espacio extra arriba */
+  font-size: 2rem;
+  color: var(--accent);
+}
+/* Link activo en navbar */
+#Enlaces a.active {
+  background: rgba(79, 140, 255, 0.25);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Botón volver arriba */
+#btnTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  display: none;
+  transition: transform 0.3s;
+}
+#btnTop:hover {
+  transform: scale(1.1);
+}
+
+/* Animaciones de entrada */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
