@@ -23,25 +23,6 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-
-// 2. Botón para volver arriba
-const btnTop = document.createElement("button");
-btnTop.innerText = "↑";
-btnTop.id = "btnTop";
-document.body.appendChild(btnTop);
-
-btnTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    btnTop.style.display = "block";
-  } else {
-    btnTop.style.display = "none";
-  }
-});
-
 // 3. Animaciones al hacer scroll (secciones que aparecen)
 const observer = new IntersectionObserver(
   (entries) => {
