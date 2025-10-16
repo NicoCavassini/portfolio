@@ -1,0 +1,22 @@
+img {
+  width: 400px; /* Se adapta al ancho del contenedor */
+  /* Límite máximo */
+   /* Mantiene la proporción */
+}   
+h1{
+    font-size: 50px
+}
+table,td,th{
+  border: solid 1px black;
+  border-collapse: collapse;
+}
+
+body{
+  background-color: darkgray;
+}
+.clase{
+  padding: 20px;
+  background-color: aqua;
+  margin: 20px;
+  border: black solid 2px;
+}
