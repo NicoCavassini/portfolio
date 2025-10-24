@@ -113,3 +113,39 @@ const observer = new IntersectionObserver(
 sections.forEach((section) => {
   observer.observe(section);
 });
+//seccion para el clima con api key
+const boton =document.getElementById("boton")
+boton.addEventListener("click",async() =>{
+  const ciudad= document.getElementById("ciudad").value.trim();
+  const apiKey= "2ebdf9bd5f670e0a56e7afdde0eeff5c";
+  if (!ciudad){
+    alert("Ingrese una ciudad");
+    return;
+  }
+  try{
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang=es`;
+    const response = await fetch(url);
+    if (!response.ok) {
+      resultado.innerHTML = "<p>No se encontró la ciudad.</p>";
+      return;
+    }
+
+    const data = await response.json();
+    const temp = data.main.temp;
+    const descripcion = data.weather[0].description;
+    const nombre = data.name;
+
+    resultado.innerHTML = `
+      <h2>${nombre}</h2>
+      <p>Temperatura: ${temp}°C</p>
+      <p>Condición: ${descripcion}</p>
+    `;
+  } 
+  catch (error) {
+    console.error(error);
+    resultado.innerHTML = "<p>Ocurrió un error al obtener los datos.</p>";
+}
+
+
+
+});
